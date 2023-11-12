@@ -3,16 +3,23 @@
 @import "../../node_modules/bootstrap/scss/variables";
 
 // Default variable overrides
-$primary: #000;
+$primary: #121212;
+$secondary: #00ff00;
 $font-family-base: 'Fira Code', monospace;
 
 // merge with existing $theme-colors map
 $theme-colors: map-merge($theme-colors, (
-  "primary": $primary
+  "primary": $primary,
+  "secondary": $secondary
 ));
 
 code {
   font-family: 'Fira Code', monospace !important;
+  color: $secondary !important;
+}
+
+.section-line {
+  border-top: 1px solid #fff;
 }
 
 // Required
