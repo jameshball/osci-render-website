@@ -1,0 +1,19 @@
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+// Default variable overrides
+$primary: #000;
+$font-family-base: 'Fira Code', monospace;
+
+// merge with existing $theme-colors map
+$theme-colors: map-merge($theme-colors, (
+  "primary": $primary
+));
+
+code {
+  font-family: 'Fira Code', monospace !important;
+}
+
+// Required
+@import "../../node_modules/bootstrap/scss/bootstrap";

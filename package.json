@@ -1,0 +1,47 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  },
+  "name": "osci-render-website",
+  "description": "Website for osci-render 2.0",
+  "version": "1.0.0",
+  "main": "index.html",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "live-server": "^1.2.2",
+    "nodemon": "^3.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.69.5"
+  },
+  "scripts": {
+    "build": "npm run css",
+    "css-compile": "sass --load-path=node_modules --style=compressed --source-map --precision 6 assets/scss:assets/css",
+    "css-lint": "stylelint scss/",
+    "css-prefix": "postcss --replace assets/css/main.css --use autoprefixer --map",
+    "css-purge": "purgecss --keyframes --css assets/css/main.css --content index.html \"node_modules/bootstrap/js/dist/{util,modal}.js\" --output assets/css/",
+    "css": "npm-run-all css-compile css-prefix",
+    "server": "live-server --port=3000",
+    "start": "npm-run-all --parallel watch server",
+    "watch": "nodemon -e html,scss -x \"npm run css\"",
+    "test": "npm run css-lint && npm run css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameshball/osci-render-website.git"
+  },
+  "keywords": [
+    "oscilloscope",
+    "synthesizer",
+    "music",
+    "audio",
+    "plugin"
+  ],
+  "author": "James H Ball",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jameshball/osci-render-website/issues"
+  },
+  "homepage": "https://github.com/jameshball/osci-render-website#readme"
+}
