@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.2"
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.3"
   },
   "name": "osci-render-website",
   "description": "Website for osci-render 2.0",

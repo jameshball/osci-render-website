@@ -18,9 +18,37 @@ code {
   color: $secondary !important;
 }
 
+.modal-header, .modal-body, .modal-footer {
+  background-color: $primary !important;
+  color: white;
+}
+
+.modal-footer, .modal-header {
+  border: none !important;
+}
+
+.modal-content {
+  border: 1px solid white !important;
+  padding-bottom: 10px;
+  background-color: $primary !important;
+}
+
+.video-overlay {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 100%;
+}
+
+.btn-primary {
+  border: 1px solid white !important;
+}
+
 .section-line {
   border-top: 1px solid #fff;
 }
 
 // Required
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss"

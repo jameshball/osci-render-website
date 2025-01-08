@@ -25,14 +25,46 @@
     <meta name="theme-color" content="#111111">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
+
 </head>
 
-<body>
+<body class="bg-primary">
+
+    <!-- Modal -->    
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-secondary" style="padding-top: 6px;">
+            <a href="sosci">
+              <div class="ratio ratio-1x1">
+                <video autoplay loop muted>
+                  <source src="../assets/images/real_oscilloscope.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <img src="assets/images/sosci_is_here.png" class="video-overlay" />
+            </a>
+            <br>
+            <h4><sup>*</sup>this super-realistic video was simulated with sosci</h4>
+            <div class="col text-center" style="margin-top: 22px;">
+              <a href="sosci">
+                <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">learn more!</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <header class="bg-primary text-secondary text-center py-5">
         <div class="container">
             <img src="assets/images/osci-wide.png" alt="osci-render logo" class="img-fluid mb-4">
             <h3>an audio plugin for audio-visual music-making</h3>
+            <br>
+            <a href="sosci#purchase"><button type="button" class="btn btn-secondary btn-lg">get osci-render premium</button></a>
         </div>
     </header>
 
@@ -65,5 +97,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://gumroad.com/js/gumroad-embed.js"></script>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script>
+ document.addEventListener('DOMContentLoaded', function () {
+    var modal = new bootstrap.Modal(document.getElementById('modal'));
+    modal.show();
+  });
+</script>
 
 </html>

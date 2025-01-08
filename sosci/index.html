@@ -15,24 +15,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>sosci</title>
-    <link rel="icon" type="image/png" href="/assets/images/sosci/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/images/sosci/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/images/sosci/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/sosci/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="../assets/images/sosci/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/sosci/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/images/sosci/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/sosci/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="sosci" />
-    <link rel="manifest" href="/assets/images/sosci/site.webmanifest" />
+    <link rel="manifest" href="../assets/images/sosci/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#111111">
     <meta name="theme-color" content="#111111">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 
-<body>
+<body class="bg-primary">
 
     <header class="bg-primary text-secondary text-center py-5">
         <div class="container">
-            <img src="assets/images/sosci_logo_full_transparent.png" alt="sosci logo" class="img-fluid mb-4">
+            <img src="../assets/images/sosci_logo_full_transparent.png" alt="sosci logo" class="img-fluid mb-4">
             <h3>an audio plugin for simulating realistic analogue oscilloscopes</h3>
+            <br>
+            <a href="#purchase"><button type="button" class="btn btn-secondary btn-lg">↓ purchase</button></a>
         </div>
     </header>
 
@@ -40,7 +42,7 @@
         <section class="container py-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h4>sosci is a super-realistic software oscilloscope for simulating the look and feel of a real analogue oscilloscope from the 20th century.</h4>
+                    <h4>sosci is a super-realistic software oscilloscope that simulates the look and feel of a real analogue oscilloscope from the 20th century.</h4>
                     <br>
                     <h4>features</h4>
                     <h4>&nbsp;• audio upsampling with realistic artifacts</h4>
@@ -48,13 +50,11 @@
                     <h4>&nbsp;• recording to .mp4</h4>
                     <h4>&nbsp;• presets for real oscilloscopes</h4>
                     <br>
-                    <h4>soon to be released as an audio plugin, or standalone app, on Windows, macOS, and Linux<sup>*</sup>.</h4>
+                    <h4>available as an audio plugin, and standalone app, on Windows, macOS, and Linux.</h4>
                     <br>
                     <h4>join the <a href="https://discord.gg/ekjpQvT68C" class="link-secondary">discord server</a> for
                         support, updates, and to share your art, or email me at <a href="mailto:james@ball.sh"
                             class="link-secondary">james@ball.sh</a>.</h4>
-                    <br>
-                    <h6><sup>*</sup> Linux is not fully supported!</h6>
                 </div>
             </div>
         </section>
@@ -67,22 +67,25 @@
                 <div class="col-md">
                     <div class="ratio ratio-1x1">
                         <video autoplay loop muted>
-                            <source src="assets/images/real_oscilloscope.mp4" type="video/mp4">
+                            <source src="../assets/images/real_oscilloscope.mp4" type="video/mp4">
                             Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="ratio ratio-1x1">
                         <video autoplay loop muted>
-                            <source src="assets/images/lightning.mp4" type="video/mp4">
+                            <source src="../assets/images/lightning.mp4" type="video/mp4">
                             Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="ratio ratio-1x1">
                         <video autoplay loop muted>
-                            <source src="assets/images/vector_display.mp4" type="video/mp4">
+                            <source src="../assets/images/vector_display.mp4" type="video/mp4">
                             Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
               </div>
@@ -91,12 +94,11 @@
     </div>
 
 
-    <!--div class="section-line">
-        <section class="bg-primary py-5">
-            <div class="gumroad-product-embed"><a href="https://jameshball.gumroad.com/l/osci-render">Loading...</a>
-            </div>
+    <div class="section-line" id="purchase" style="min-height: 100vh;">
+        <section class="bg-primary py-5" style="padding-top: 1rem !important;">
+            <div class="gumroad-product-embed"><a href="https://jameshball.gumroad.com/l/sosci">Loading...</a></div>
         </section>
-    </div-->
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://gumroad.com/js/gumroad-embed.js"></script>
