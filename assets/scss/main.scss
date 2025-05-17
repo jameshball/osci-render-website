@@ -1,3 +1,31 @@
+// Add gap between videos in the 2x3 grid
+.video-grid-row {
+  display: flex;
+  gap: 1.5rem;
+
+  .col-md {
+    .ratio {
+      overflow: hidden; // Ensures scaled video doesn't overflow rounded corners of parent
+      border-radius: 10px; // Apply border-radius to the container for cleaner effect
+
+      video {
+        transition: transform 0.3s ease, opacity 0.3s ease; // Smooth transitions for hover
+        object-fit: cover; // Ensures video covers the ratio box without distortion
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+// Remove all Bootstrap row gutters globally and prevent horizontal overflow
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.row > * {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 // Required
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
@@ -33,6 +61,17 @@ code {
   background-color: $primary !important;
 }
 
+// Style for the modal video container to ensure consistent rounded corners
+#modal .modal-body .ratio {
+  overflow: hidden;
+  border-radius: 1%;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ensures video fills the rounded container nicely
+  }
+}
+
 .video-overlay {
   position: absolute;
   left: 50%;
@@ -41,8 +80,40 @@ code {
   width: 100%;
 }
 
+.accent-glow-effect {
+  border-radius: 1%;
+  box-shadow: 0px 0px 25px 5px rgba(0, 255, 0, 0.3); /* Static accent color shadow - glows by default */
+  margin: 0 15px 15px 15px; /* Added margin for glow visibility */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for glow */
+
+  &.hide-glow-when-visible { /* New class to hide glow when element is visible */
+    box-shadow: none;
+  }
+}
+
+#interactive-video-container {
+  border-radius: 1%; /* Match video's border-radius for consistent shadow */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2); /* Initial subtle shadow */
+  transition: box-shadow 0.2s ease-out; /* Smooth transition for shadow changes */
+  position: relative; /* Ensures proper stacking context if needed */
+  /* The video element itself has border-radius: 1% set inline */
+}
+
 .btn-primary {
   border: 1px solid white !important;
+}
+
+// Style for btn-secondary for hover effects
+.btn-secondary {
+  transition: box-shadow 0.2s ease-out, background-color 0.2s ease-out, color 0.2s ease-out; // Removed transform from transition
+  border: 1px solid $secondary !important; 
+  color: $primary !important; // Default text color (dark)
+  background-color: $secondary !important; // Default background is accent green
+
+  &:hover {
+    box-shadow: 0px 5px 15px rgba($secondary, 0.5); // Accent color shadow
+    color: $primary !important; // Keep text color dark for contrast
+  }
 }
 
 .section-line {
@@ -53,9 +124,17 @@ code {
    background: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100% 100%"><text fill="%23FF0000" x="50%" y="50%" font-family="\'Lucida Grande\', sans-serif" font-size="24" text-anchor="middle">PLACEHOLDER</text></svg>') 0px 0px no-repeat;
 }
 
+// Original accordion styles restored
 .accordion-button:focus {
   box-shadow: none !important;
   outline: none !important;
+}
+
+// Remove box-shadow from open accordion buttons
+.accordion-button:not(.collapsed) {
+  box-shadow: none !important;
+  background-color: lighten($primary, 10%) !important; // Make background lighter when expanded
+  color: $secondary !important; // Change text to accent color when expanded
 }
 
 // Make accordion arrow use the secondary color
@@ -63,7 +142,7 @@ code {
   filter: none !important;
   background-image: none !important;
   color: $secondary !important;
-  content: '\f078'; // Bootstrap icon chevron-down
+  content: '\\f078'; // Bootstrap icon chevron-down
   font-family: "Bootstrap-icons" !important;
   font-size: 1.25rem;
   display: inline-block;
@@ -80,7 +159,28 @@ code {
 .accordion-body {
   color: #fff !important;
 }
+// End of restored accordion styles
 
 // Required
 @import "../../node_modules/bootstrap/scss/bootstrap";
-@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss"
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+.platform-icons-interactive {
+  display: inline-block; // Make the wrapper only as wide as its content
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  padding: 0% 1rem; // Add some padding for better click area
+
+  &:hover {
+    background-color: lighten($primary, 10%);
+    border-color: $secondary;
+    outline: none;
+  }
+
+  // No need for &:focus specific styles if we only want hover
+
+  .mdi {
+    color: white;
+  }
+}

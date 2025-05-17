@@ -12,7 +12,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg?v=2" color="#111111">
     <link rel="shortcut icon" href="/favicon.ico?v=2">
     <meta name="msapplication-TileColor" content="#111111">
-    <meta name="theme-color" content="#111111">
+    <meta name="theme-color" content="#111111">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
 
@@ -60,12 +60,10 @@
 
     <div class="bg-primary section-line text-white">
         <section class="container py-5">
-            <div class="row">
+            <div class="row video-grid-row">
                 <div class="col-lg-8 mx-auto">
-                    <h4>osci-render is a synthesizer for making music by drawing objects, text, and images on an
-                        oscilloscope using audio output. this allows for 3D rendering of <code>.obj</code> files,
-                        <code>.svg</code> images, <code>.txt</code> files, and Blender scenes on Windows, macOS, and
-                        Linux.
+                    <h4>osci-render is a synthesizer for making music by drawing video, objects, text, blender animations, and images on an
+                        oscilloscope using audio output.
                     </h4>
                     <br>
                     <h4>learn more about osci-render on my <a href="https://youtube.com/@jameshball" class="link-secondary">youtube channel</a>.</h4>
@@ -73,11 +71,91 @@
                     <h4>join the <a href="https://discord.gg/ekjpQvT68C" class="link-secondary">discord server</a> with 1000+ members for
                         support, updates, and to share your art, or email me at <a href="mailto:james@ball.sh"
                             class="link-secondary">james@ball.sh</a>.</h4>
+                    <div class="text-center">
+                        <div id="platform-icons-wrapper" class="mt-4 platform-icons-interactive" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Available on Windows, macOS, and Linux">
+                            <span class="mdi mdi-microsoft-windows mdi-36px mx-2" title="Windows"></span>
+                            <span class="mdi mdi-apple mdi-36px mx-2" title="macOS"></span>
+                            <span class="mdi mdi-penguin mdi-36px mx-2" title="Linux"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 
+
+
+    <!-- Video previews -->
+    <div class="section-line text-white text-center">
+        <section class="bg-primary py-5">
+            <!-- Top row: single 16:9 video -->
+            <div class="row mb-4 no-gutters">
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="ratio ratio-16x9 accent-glow-effect" style="max-width: 1500px; width: 100%;">
+                        <video id="interface-demo-video" autoplay loop muted style="width: 100%; height: auto; border-radius: 1%;">
+                            <source src="assets/images/trumpet_interface.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="row video-grid-row">
+                <div class="col-md">
+                    <div class="ratio ratio-1x1">
+                        <video autoplay loop muted>
+                            <source src="assets/images/cubes.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ratio ratio-1x1">
+                        <video id="square-spiral-video" autoplay loop muted>
+                            <source src="assets/images/square_spiral.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ratio ratio-1x1">
+                        <video autoplay loop muted>
+                            <source src="assets/images/lightning.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row video-grid-row">
+                <div class="col-md">
+                    <div class="ratio ratio-1x1">
+                        <video autoplay loop muted>
+                            <source src="assets/images/real_oscilloscope.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ratio ratio-1x1">
+                        <video autoplay loop muted>
+                            <source src="assets/images/lines.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ratio ratio-1x1">
+                        <video autoplay loop muted>
+                            <source src="assets/images/sphere_splitting.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h5><sup>*</sup>last two visuals by <a href="https://www.youtube.com/@harleymatthews5091" class="link-secondary">Marv94</a>.</h5>
+        </section>
+    </div>
 
     <div class="section-line bg-primary text-white">
         <section class="container py-5">
@@ -92,8 +170,17 @@
         </section>
     </div>
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://gumroad.com/js/gumroad-embed.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var squareSpiral = document.getElementById('square-spiral-video');
+        if (squareSpiral) {
+          squareSpiral.playbackRate = 2.0;
+        }
+      });
+    </script>
 
     <footer class="bg-primary text-white text-center py-3">
         <div class="container">
@@ -118,6 +205,12 @@
         localStorage.setItem('osciModalSeenDate', today);
       });
     }
+  });
+
+  // Initialize Bootstrap tooltips
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
   });
 
 fetch('assets/faq.html')

@@ -13,6 +13,7 @@
     <link rel="manifest" href="../assets/images/sosci/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#111111">
     <meta name="theme-color" content="#111111">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -43,11 +44,17 @@
                     <h4>&nbsp;• recording to .mp4</h4>
                     <h4>&nbsp;• presets for real oscilloscopes</h4>
                     <br>
-                    <h4>available as an audio plugin, and standalone app, on Windows, macOS, and Linux.</h4>
-                    <br>
                     <h4>join the <a href="https://discord.gg/ekjpQvT68C" class="link-secondary">discord server</a> for
                         support, updates, and to share your art, or email me at <a href="mailto:james@ball.sh"
                             class="link-secondary">james@ball.sh</a>.</h4>
+                    <div class="text-center">
+                        <div id="platform-icons-wrapper" class="mt-4 platform-icons-interactive" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Available on Windows, macOS, and Linux">
+                            <span class="mdi mdi-microsoft-windows mdi-36px mx-2" title="Windows"></span>
+                            <span class="mdi mdi-apple mdi-36px mx-2" title="macOS"></span>
+                            <span class="mdi mdi-penguin mdi-36px mx-2" title="Linux"></span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -56,7 +63,7 @@
     <!-- Video previews -->
     <div class="section-line text-white text-center">
         <section class="bg-primary py-5">
-            <div class="row">
+            <div class="row video-grid-row">
                 <div class="col-md">
                     <div class="ratio ratio-1x1">
                         <video autoplay loop muted>
@@ -83,7 +90,7 @@
                 </div>
             </div>
             <br>
-            <div class="row">
+            <div class="row video-grid-row">
                 <div class="col-md">
                     <div class="ratio ratio-1x1">
                         <video autoplay loop muted>
@@ -146,10 +153,16 @@
         document.getElementById('year').textContent = new Date().getFullYear();
 
         fetch('../assets/faq.html')
-  .then(response => response.text())
-  .then(html => {
-    document.getElementById('faq-section').innerHTML = html;
-  });
+          .then(response => response.text())
+          .then(html => {
+            document.getElementById('faq-section').innerHTML = html;
+          });
+
+        // Initialize Bootstrap tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
     </script>
 </body>
 
