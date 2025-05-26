@@ -20,35 +20,6 @@
 
 <body class="bg-primary">
 
-    <!-- Modal -->    
-    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-secondary" style="padding-top: 6px;">
-            <a href="sosci">
-              <div class="ratio ratio-1x1">
-                <video autoplay loop muted playsinline nodownload nofullscreen noremoteplayback preload="auto">
-                  <source src="../assets/images/real_oscilloscope.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <img src="assets/images/sosci_is_here.png" class="video-overlay" />
-            </a>
-            <br>
-            <h4><sup>*</sup>this super-realistic video was simulated with sosci</h4>
-            <div class="col text-center" style="margin-top: 22px;">
-              <a href="sosci">
-                <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">learn more!</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <header class="bg-primary text-secondary text-center py-5">
         <div class="container">
             <img src="assets/images/osci-wide.png" alt="osci-render logo" class="img-fluid mb-4">
@@ -194,19 +165,6 @@
 </body>
 
 <script>
- document.addEventListener('DOMContentLoaded', function () {
-    // Only show modal if not already seen today
-    var lastSeen = localStorage.getItem('osciModalSeenDate');
-    var today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-    if (lastSeen !== today) {
-      var modal = new bootstrap.Modal(document.getElementById('modal'));
-      modal.show();
-      document.getElementById('modal').addEventListener('hidden.bs.modal', function () {
-        localStorage.setItem('osciModalSeenDate', today);
-      });
-    }
-  });
-
   // Initialize Bootstrap tooltips
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
