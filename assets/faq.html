@@ -1,63 +1,50 @@
-<div class="row">
-    <div class="col-lg-8 mx-auto">
-        <h3 class="mb-4">what is the difference between osci-render and sosci?</h3>
-        <div class="accordion" id="faqAccordion">
-            <div class="accordion-item bg-primary border-secondary">
-                <h2 class="accordion-header" id="faq1-heading">
-                    <button class="accordion-button bg-primary text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
-                        what is osci-render?
-                    </button>
-                </h2>
-                <div id="faq1" class="accordion-collapse collapse" aria-labelledby="faq1-heading" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        <p><a href="/" class="link-secondary">osci-render</a> is an oscilloscope music synthesizer. It is software designed to convert images and 3D animations into visuals to display on a real or software oscilloscope. It can generate audio from 3D objects, text, images, and more, allowing for creative audio-visual music-making.</p>
-                        <p>the premium version is <u>required for commercial use</u> and includes:</p>
-                        <ul>
-                            <li>the same high-quality built-in visualiser that sosci has</li>
-                            <li>the ability to record visuals</li>
-                            <li>support for MP4 and MOV video formats</li>
-                            <li>syphon/spout input</li>
-                            <li>improved text rendering</li>
-                        </ul>
-                        <br>
-                        <em>Note: sosci is not included with osci-render premium.</em>
+<div class="row plugin-comparison">
+    <div class="col-lg-10 mx-auto">
+        <h2 class="text-center mb-5">not sure which plugin you need?</h2>
+        
+        <div class="price-toggle">
+            <a href="/" class="price-option" data-plugin="osci-render">
+                <input type="radio" name="plugin" value="osci-render">
+                <div class="price-content">
+                    <div class="price-header">
+                        <span class="label">osci-render</span>
                     </div>
+                    <p class="features"><strong>audio-visual synthesizer</strong><br><span class="mdi mdi-piano" style="color: #00ff00; margin-top: 0.5rem; display: inline-block;"></span> converts 3d objects, text & images into audio<br><span class="mdi mdi-palette" style="color: #00ff00;"></span> full synthesis toolkit for music creation<br><span class="mdi mdi-video" style="color: #00ff00;"></span> premium: includes recording & video formats</p>
                 </div>
-            </div>
-            <div class="accordion-item bg-primary border-secondary">
-                <h2 class="accordion-header" id="faq2-heading">
-                    <button class="accordion-button bg-primary text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                        what is sosci?
-                    </button>
-                </h2>
-                <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2-heading" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        <p><a href="/sosci" class="link-secondary">sosci</a> is an analogue oscilloscope simulator. It is a software oscilloscope that you run on your computer instead of buying a physical one.</p>
-                        <p>sosci saves you $$$ and effort by no longer needing to purchase and maintain an analogue oscilloscope + audio interface.</p>
-                        <p>it is purely an audio visualiser and does not generate sound of its own, instead it is used to visualise audio from other sources.</p>
-                        <br>
-                        <em>Note: sosci is not included with osci-render premium.</em>
+            </a>
+            <a href="/sosci" class="price-option" data-plugin="sosci">
+                <input type="radio" name="plugin" value="sosci">
+                <div class="price-content">
+                    <div class="price-header">
+                        <span class="label">sosci</span>
                     </div>
+                    <p class="features"><strong>oscilloscope simulator</strong><br><span class="mdi mdi-television" style="color: #00ff00; margin-top: 0.5rem; display: inline-block;"></span> visualizes audio from any source<br><span class="mdi mdi-currency-usd" style="color: #00ff00;"></span> replaces expensive hardware oscilloscopes<br><span class="mdi mdi-target" style="color: #00ff00;"></span> focused purely on high-quality visualization</p>
                 </div>
-            </div>
-            <div class="accordion-item bg-primary border-secondary">
-                <h2 class="accordion-header" id="faq3-heading">
-                    <button class="accordion-button bg-primary text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                        which one should I get?
-                    </button>
-                </h2>
-                <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3-heading" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        <ul>
-                            <li>if you want a plugin just for visualising audio, <strong>get <a href="/sosci" class="link-secondary">sosci</a></strong>!</li>
-                            <li>if you want a fully-fledged video + audio synthesiser that converts 3D objects, text, video, and images into audio, <strong>get <a href="/" class="link-secondary">osci-render</a></strong>!</li>
-                        </ul>
-                        sosci is focused on being a visualiser, while osci-render is a synthesiser with many more features. both can visualise audio, but osci-render premium includes the beautiful visualiser and recording capabilities from sosci, plus much more.
-                        <br><br>
-                        <em>Note: sosci is not included with osci-render premium.</em>
-                    </div>
-                </div>
-            </div>
+            </a>
+        </div>
+        
+        <div class="text-center mt-4">
+            <p class="text-white"><strong>quick guide:</strong> want to <em>create</em> oscilloscope music? choose <strong>osci-render</strong>. want to <em>visualize</em> existing audio? choose <strong>sosci</strong>.</p>
         </div>
     </div>
 </div>
+
+<style>
+    .price-option {
+        color: inherit;
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+    }
+    
+    .price-option:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+    
+    .price-option:focus {
+        color: inherit;
+        text-decoration: none;
+        outline: none;
+    }
+</style>

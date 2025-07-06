@@ -12,10 +12,10 @@
     <meta name="apple-mobile-web-app-title" content="sosci" />
     <link rel="manifest" href="../assets/images/sosci/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#111111">
-    <meta name="theme-color" content="#111111">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+    <meta name="theme-color" content="#111111">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/plugin-toggle.js"></script>
 </head>
 
 <body class="bg-primary">
@@ -27,9 +27,7 @@
             <br>
             <a href="#purchase"><button type="button" class="btn btn-secondary btn-lg">↓ purchase</button></a>
         </div>
-    </header>
-
-    <div class="bg-primary section-line text-white">
+    </header>    <div class="bg-primary section-line text-white">
         <section class="container py-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
@@ -150,13 +148,13 @@
     </footer>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        fetch('../assets/faq.html')
-          .then(response => response.text())
-          .then(html => {
-            document.getElementById('faq-section').innerHTML = html;
-          });
+        document.getElementById('year').textContent = new Date().getFullYear();        fetch('../assets/faq.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('faq-section').innerHTML = html;
+                // Dispatch custom event to initialize the toggle
+                document.dispatchEvent(new CustomEvent('faqLoaded'));
+            });
 
         // Initialize Bootstrap tooltips
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
