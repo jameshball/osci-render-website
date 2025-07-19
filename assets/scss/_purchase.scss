@@ -188,40 +188,50 @@ $card-border: rgba(255, 255, 255, 0.1);
             margin: 1.5rem 0 2rem;
 
             .feature-card {
-                padding: 1.25rem;
+                padding: 1.5rem;
                 background: rgba(255, 255, 255, 0.05);
                 border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 8px;
-                transition: transform 0.2s ease, background-color 0.2s ease;
+                border-radius: 12px;
+                transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 
                 &:hover {
-                    transform: translateY(-2px);
+                    transform: translateY(-3px);
                     background: rgba(255, 255, 255, 0.08);
+                    box-shadow: 0 8px 24px rgba($accent-color, 0.1);
                 }
 
                 .feature-header {
                     display: flex;
                     align-items: center;
                     gap: 1rem;
-                    margin-bottom: 0.5rem;
+                    margin-bottom: 0.75rem;
 
                     .mdi {
-                        font-size: 24px;
+                        font-size: 28px;
                         color: $accent-color;
+                        flex-shrink: 0;
+
+                        // Make specific icons larger
+                        &.mdi-waveform,
+                        &.mdi-video-outline,
+                        &.mdi-record-rec {
+                            font-size: 32px;
+                        }
                     }
 
                     h4 {
                         margin: 0;
-                        font-size: 1.1rem;
+                        font-size: 1.15rem;
                         color: white;
+                        font-weight: 600;
                     }
                 }
 
                 p {
                     margin: 0;
                     font-size: 0.95rem;
-                    line-height: 1.4;
-                    color: rgba(255, 255, 255, 0.8);
+                    line-height: 1.5;
+                    color: rgba(255, 255, 255, 0.85);
                 }
             }
         }
@@ -571,6 +581,10 @@ a.action-button {
     &.premium {
         background: $accent-color;
         color: $card-bg !important;
+
+        &:hover {
+            color: $card-bg !important;
+        }
     }
 
     &.discord {
@@ -618,6 +632,78 @@ a.action-button {
         &:hover {
             background: rgba(255, 255, 255, 0.08);
             transform: translateX(2px);
+        }
+    }
+}
+
+// Standalone premium features styles (for main page, outside purchase card)
+.standalone-premium-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0 2rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+
+    @media (max-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        padding: 0 1rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 24px rgba($accent-color, 0.1);
+        }
+
+        .feature-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+
+            .mdi {
+                font-size: 28px;
+                color: $accent-color;
+                flex-shrink: 0;
+
+                // Make specific icons larger
+                &.mdi-waveform,
+                &.mdi-video-outline,
+                &.mdi-record-rec {
+                    font-size: 32px;
+                }
+            }
+
+            h4 {
+                margin: 0;
+                font-size: 1.15rem;
+                color: white;
+                font-weight: 600;
+            }
+        }
+
+        p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.85);
         }
     }
 }

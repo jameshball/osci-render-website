@@ -8,8 +8,9 @@
                 <div class="price-content">
                     <div class="price-header">
                         <span class="label">osci-render</span>
+                        <span class="plugin-type">audio-visual synthesizer</span>
                     </div>
-                    <p class="features"><strong>audio-visual synthesizer</strong><br><span class="mdi mdi-piano" style="color: #00ff00; margin-top: 0.5rem; display: inline-block;"></span> converts 3d objects, text & images into audio<br><span class="mdi mdi-palette" style="color: #00ff00;"></span> full synthesis toolkit for music creation<br><span class="mdi mdi-video" style="color: #00ff00;"></span> premium: includes recording & video formats</p>
+                    <p class="features"><span class="mdi mdi-piano" style="color: #00ff00; margin-top: 0.5rem; display: inline-block;"></span> converts 3d objects, text & images into audio<br><span class="mdi mdi-palette" style="color: #00ff00;"></span> full synthesis toolkit for music creation<br><span class="mdi mdi-video" style="color: #00ff00;"></span> premium: includes recording & video formats</p>
                 </div>
             </a>
             <a href="/sosci" class="price-option" data-plugin="sosci">
@@ -17,8 +18,9 @@
                 <div class="price-content">
                     <div class="price-header">
                         <span class="label">sosci</span>
+                        <span class="plugin-type">oscilloscope simulator</span>
                     </div>
-                    <p class="features"><strong>oscilloscope simulator</strong><br><span class="mdi mdi-television" style="color: #00ff00; margin-top: 0.5rem; display: inline-block;"></span> visualizes audio from any source<br><span class="mdi mdi-currency-usd" style="color: #00ff00;"></span> replaces expensive hardware oscilloscopes<br><span class="mdi mdi-target" style="color: #00ff00;"></span> focused purely on high-quality visualization</p>
+                    <p class="features"><span class="mdi mdi-television" style="color: #00ff00; margin-top: 0.5rem; display: inline-block;"></span> visualizes audio from any source<br><span class="mdi mdi-currency-usd" style="color: #00ff00;"></span> replaces expensive hardware oscilloscopes<br><span class="mdi mdi-target" style="color: #00ff00;"></span> focused purely on high-quality visualization</p>
                 </div>
             </a>
         </div>
@@ -46,5 +48,24 @@
         color: inherit;
         text-decoration: none;
         outline: none;
+    }
+    
+    .price-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .label {
+        flex-shrink: 0;
+    }
+    
+    .plugin-type {
+        font-weight: bold;
+        font-size: 1.2rem;
+        flex: 1;
+        min-width: 0;
+        word-break: break-word;
     }
 </style>
