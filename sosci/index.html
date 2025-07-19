@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/main.css">
+    <script src="../assets/js/plugin-toggle.js"></script>
 </head>
 
 <body class="bg-primary">
@@ -28,33 +29,87 @@
             <a href="#purchase"><button type="button" class="btn btn-secondary btn-lg">↓ purchase</button></a>
         </div>
     </header>
-
     <div class="bg-primary section-line text-white">
         <section class="container py-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h4>sosci is a super-realistic software oscilloscope that simulates the look and feel of a real analogue oscilloscope from the 20th century.</h4>
+                    <h4>sosci is a super-realistic software oscilloscope that simulates the look and feel of a real
+                        analogue oscilloscope from the 20th century.</h4>
+                </div>
+            </div>
+            <!-- Premium Features Section - Full Width -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="premium-features standalone-premium-features">
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <span class="mdi mdi-waveform"></span>
+                                <h4>Audio Upsampling</h4>
+                            </div>
+                            <p>Realistic artifacts and authentic analogue oscilloscope behavior</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <span class="mdi mdi-brightness-6"></span>
+                                <h4>3 Channel Brightness Input</h4>
+                            </div>
+                            <p>Z-axis control for variable brightness and intensity effects</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <span class="mdi mdi-video-outline"></span>
+                                <h4>Video Sharing</h4>
+                            </div>
+                            <p>Real-time output with Syphon/Spout support for live visuals</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <span class="mdi mdi-record-rec"></span>
+                                <h4>Recording</h4>
+                            </div>
+                            <p>Export your oscilloscope visuals as MP4 files</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <span class="mdi mdi-tune-variant"></span>
+                                <h4>Real Oscilloscope Presets</h4>
+                            </div>
+                            <p>Authentic presets based on vintage analogue oscilloscopes</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-header">
+                                <span class="mdi mdi-application-outline"></span>
+                                <h4>Multiple Formats</h4>
+                            </div>
+                            <p>Available as VST, AU, and standalone application</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h4>based on the amazing <a href="https://dood.al/oscilloscope/" class="link-secondary">XXY
+                            Oscilloscope</a> by Neil Thapen.</h4>
                     <br>
-                    <h4>based on the amazing <a href="https://dood.al/oscilloscope/" class="link-secondary">XXY Oscilloscope</a> by Neil Thapen.</h4>
-                    <br>
-                    <h4>features</h4>
-                    <h4>&nbsp;• audio upsampling with realistic artifacts</h4>
-                    <h4>&nbsp;• 3 channel brightness (z) input</h4>
-                    <h4>&nbsp;• video sharing with Syphon/Spout</h4>
-                    <h4>&nbsp;• recording to .mp4</h4>
-                    <h4>&nbsp;• presets for real oscilloscopes</h4>
-                    <br>
-                    <h4>join the <a href="https://discord.gg/ekjpQvT68C" class="link-secondary">discord server</a> for
+                    <h4>join the <a href="https://discord.gg/ekjpQvT68C" class="link-secondary">discord server</a> with
+                        1000+ members for
                         support, updates, and to share your art, or email me at <a href="mailto:james@ball.sh"
                             class="link-secondary">james@ball.sh</a>.</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
                     <div class="text-center">
-                        <div id="platform-icons-wrapper" class="mt-4 platform-icons-interactive" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Available on Windows, macOS, and Linux">
+                        <div id="platform-icons-wrapper" class="platform-icons-interactive" tabindex="0"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="Available on Windows, macOS, and Linux">
                             <span class="mdi mdi-microsoft-windows mdi-36px mx-2" title="Windows"></span>
                             <span class="mdi mdi-apple mdi-36px mx-2" title="macOS"></span>
                             <span class="mdi mdi-penguin mdi-36px mx-2" title="Linux"></span>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -117,7 +172,8 @@
                 </div>
             </div>
             <br>
-            <h5><sup>*</sup>bottom visuals by <a href="https://www.instagram.com/cinema.av/" class="link-secondary">@cinema.av</a>.</h5>
+            <h5><sup>*</sup>bottom visuals by <a href="https://www.instagram.com/cinema.av/"
+                    class="link-secondary">@cinema.av</a>.</h5>
         </section>
     </div>
 
@@ -127,41 +183,57 @@
             <div id="faq-section"></div>
         </section>
     </div>
-
-    <div class="section-line" id="purchase" style="min-height: 100vh;">
-        <section class="bg-primary py-5">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h3 class="text-center text-white">contact me if you want to purchase a multi-license of 10 copies or more for a 20% discount!</h3>
-                </div>
-            </div>
-            <div class="gumroad-product-embed"><a class="text-center link-secondary" href="https://jameshball.gumroad.com/l/sosci"><h3 style="padding-top: 50px">Loading checkout...</h3></a></div>
+    <div class="section-line bg-primary text-white" id="purchase">
+        <section class="container py-5">
+            <div id="purchase-container"></div>
         </section>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://gumroad.com/js/gumroad-embed.js"></script>
-
+    <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+    <script src="../assets/components/purchase-card.js"></script>
     <footer class="bg-primary text-white text-center py-3">
         <div class="container">
             <p>&copy; <span id="year"></span> James H Ball. All rights reserved.</p>
-            <p><a href="https://gumroad.com/terms" class="link-secondary">Terms of Service</a> | <a href="https://gumroad.com/privacy" class="link-secondary">Privacy Policy</a></p>
+            <p><a href="https://payhip.com/terms" class="link-secondary">Terms of Service</a> | <a
+                    href="https://payhip.com/privacy" class="link-secondary">Privacy Policy</a></p>
         </div>
     </footer>
-
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
         fetch('../assets/faq.html')
-          .then(response => response.text())
-          .then(html => {
-            document.getElementById('faq-section').innerHTML = html;
-          });
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('faq-section').innerHTML = html;
+                // Dispatch custom event to initialize the toggle
+                document.dispatchEvent(new CustomEvent('faqLoaded'));
+            });
 
         // Initialize Bootstrap tooltips
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-          return new bootstrap.Tooltip(tooltipTriggerEl)
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });        // Initialize purchase card
+        document.addEventListener('DOMContentLoaded', function () {
+            const purchaseCard = new PurchaseCard({
+                containerId: 'purchase-container',
+                productTitle: 'sosci',
+                descriptionFile: '../assets/components/sosci-description.html',
+                pricingFile: '../assets/components/sosci-pricing.html',
+                reviewsFile: '../assets/components/sosci-reviews.html',
+                purchaseButtonText: 'Purchase',
+                purchaseHandler: function (e) {
+                    e.preventDefault();
+
+                    Payhip.Checkout.open({
+                        product: "Ml9Em",
+                        title: "Purchase sosci",
+                        bodyStyle: "font-family: 'Fira Code', monospace; background-color: rgba(0, 0, 0, 0.5);",
+                    });
+                }
+            });
+
+            purchaseCard.load();
         });
     </script>
 </body>

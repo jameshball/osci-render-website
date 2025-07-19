@@ -12,9 +12,47 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg?v=2" color="#111111">
     <link rel="shortcut icon" href="/favicon.ico?v=2">
     <meta name="msapplication-TileColor" content="#111111">
-    <meta name="theme-color" content="#111111">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+    <meta name="theme-color" content="#111111">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/plugin-toggle.js"></script>
+
+    <style>
+        @keyframes checkoutSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                opacity: 0.8;
+                box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+            }
+
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+            }
+        }
+
+        #inline-checkout {
+            transition: all 0.3s ease;
+        }
+
+        #inline-checkout.show {
+            display: block !important;
+        }
+    </style>
 
 </head>
 
@@ -28,22 +66,26 @@
             <a href="#purchase"><button type="button" class="btn btn-secondary btn-lg">get osci-render</button></a>
         </div>
     </header>
-
     <div class="bg-primary section-line text-white">
         <section class="container py-5">
             <div class="row video-grid-row">
                 <div class="col-lg-8 mx-auto">
-                    <h4>osci-render is a synthesizer for making music by drawing video, objects, text, blender animations, and images on an
+                    <h4>osci-render is a synthesizer for making music by drawing video, objects, text, blender
+                        animations, and images on an
                         oscilloscope using audio output.
                     </h4>
                     <br>
-                    <h4>learn more about osci-render on my <a href="https://youtube.com/@jameshball" class="link-secondary">youtube channel</a>.</h4>
+                    <h4>learn more about osci-render on my <a href="https://youtube.com/@jameshball"
+                            class="link-secondary">youtube channel</a>.</h4>
                     <br>
-                    <h4>join the <a href="https://discord.gg/ekjpQvT68C" class="link-secondary">discord server</a> with 1000+ members for
+                    <h4>join the <a href="https://discord.gg/ekjpQvT68C" class="link-secondary">discord server</a> with
+                        1000+ members for
                         support, updates, and to share your art, or email me at <a href="mailto:james@ball.sh"
                             class="link-secondary">james@ball.sh</a>.</h4>
                     <div class="text-center">
-                        <div id="platform-icons-wrapper" class="mt-4 platform-icons-interactive" tabindex="0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Available on Windows, macOS, and Linux">
+                        <div id="platform-icons-wrapper" class="mt-4 platform-icons-interactive" tabindex="0"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="Available on Windows, macOS, and Linux">
                             <span class="mdi mdi-microsoft-windows mdi-36px mx-2" title="Windows"></span>
                             <span class="mdi mdi-apple mdi-36px mx-2" title="macOS"></span>
                             <span class="mdi mdi-penguin mdi-36px mx-2" title="Linux"></span>
@@ -63,7 +105,8 @@
             <div class="row mb-4 no-gutters">
                 <div class="col-12 d-flex justify-content-center">
                     <div class="ratio ratio-16x9 accent-glow-effect" style="max-width: 1500px; width: 100%;">
-                        <video id="interface-demo-video" autoplay loop muted playsinline nodownload nofullscreen noremoteplayback preload="auto" style="width: 100%; height: auto; border-radius: 1%;">
+                        <video id="interface-demo-video" autoplay loop muted playsinline nodownload nofullscreen
+                            noremoteplayback preload="auto" style="width: 100%; height: auto; border-radius: 1%;">
                             <source src="assets/images/trumpet_interface.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -81,7 +124,8 @@
                 </div>
                 <div class="col-md">
                     <div class="ratio ratio-1x1">
-                        <video id="square-spiral-video" autoplay loop muted playsinline nodownload nofullscreen noremoteplayback preload="auto">
+                        <video id="square-spiral-video" autoplay loop muted playsinline nodownload nofullscreen
+                            noremoteplayback preload="auto">
                             <source src="assets/images/square_spiral.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -124,7 +168,8 @@
                 </div>
             </div>
             <br>
-            <h5><sup>*</sup>last two visuals by <a href="https://www.youtube.com/@harleymatthews5091" class="link-secondary">Marv94</a>.</h5>
+            <h5><sup>*</sup>last two visuals by <a href="https://www.youtube.com/@harleymatthews5091"
+                    class="link-secondary">Marv94</a>.</h5>
         </section>
     </div>
 
@@ -134,48 +179,114 @@
         </section>
     </div>
 
-    <div class="section-line" id="purchase">
-        <section class="bg-primary py-5">
-            <div class="gumroad-product-embed"><a href="https://jameshball.gumroad.com/l/osci-render">Loading...</a>
-            </div>
-        </section>
+    <div class="section-line bg-primary text-white">
+        <section class="container py-5">
+            <div data-carousel-images='[
+                    "assets/images/osci-render-carousel/1.png",
+                    "assets/images/osci-render-carousel/2.png",
+                    "assets/images/osci-render-carousel/3.png",
+                    "assets/images/osci-render-carousel/4.png"
+                ]' data-carousel-interval="4000" style="aspect-ratio: 16/9;" class="mb-4"></div>
+            <div id="purchase-container"></div>
     </div>
-
-
+    </section>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://gumroad.com/js/gumroad-embed.js"></script>
+    <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+    <script src="assets/components/carousel.js"></script>
+    <script src="assets/components/purchase-card.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        var squareSpiral = document.getElementById('square-spiral-video');
-        if (squareSpiral) {
-          squareSpiral.playbackRate = 2.0;
-        }
-      });
+        document.addEventListener('DOMContentLoaded', function () {
+            var squareSpiral = document.getElementById('square-spiral-video');
+            if (squareSpiral) {
+                squareSpiral.playbackRate = 2.0;
+            }
+        });
     </script>
 
     <footer class="bg-primary text-white text-center py-3">
         <div class="container">
             <p>&copy; <span id="year"></span> James H Ball. All rights reserved.</p>
-            <p><a href="https://gumroad.com/terms" class="link-secondary">Terms of Service</a> | <a href="https://gumroad.com/privacy" class="link-secondary">Privacy Policy</a></p>
+            <p><a href="https://payhip.com/terms" class="link-secondary">Terms of Service</a> | <a
+                    href="https://payhip.com/privacy" class="link-secondary">Privacy Policy</a></p>
         </div>
     </footer>
+
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 
 <script>
-  // Initialize Bootstrap tooltips
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
-  });
+    // Initialize Bootstrap tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
 
-fetch('assets/faq.html')
-  .then(response => response.text())
-  .then(html => {
-    document.getElementById('faq-section').innerHTML = html;
-  });
+    fetch('assets/faq.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('faq-section').innerHTML = html;
+            // Dispatch custom event to initialize the toggle
+            document.dispatchEvent(new CustomEvent('faqLoaded'));
+        });    // Initialize osci-render purchase card
+    document.addEventListener('DOMContentLoaded', function () {
+        const purchaseCard = new PurchaseCard({
+            containerId: 'purchase-container',
+            productTitle: 'osci-render',
+            authorImage: 'assets/images/jameshball.jpg',
+            descriptionFile: 'assets/components/osci-render-description.html',
+            pricingFile: 'assets/components/osci-render-pricing.html',
+            purchaseButtonText: 'Purchase',
+            purchaseHandler: function (e) {
+                e.preventDefault();
+
+                // Check which price option is selected
+                const selectedPriceOption = document.querySelector('input[name="price"]:checked');
+                let targetVariant = "1751803290902"; // Default to premium
+                let title = "Purchase osci-render"; // Default title
+
+                if (selectedPriceOption && selectedPriceOption.value === "free") {
+                    targetVariant = "1751803262067";
+                    title = "Download osci-render";
+                } else if (selectedPriceOption && selectedPriceOption.value === "premium") {
+                    targetVariant = "1751803290902";
+                    title = "Purchase osci-render";
+                }
+
+                Payhip.Checkout.open({
+                    product: "HmzQd",
+                    targetVariant: targetVariant,
+                    title: title,
+                    bodyStyle: "font-family: 'Fira Code', monospace; background-color: rgba(0, 0, 0, 0.5);",
+                });
+            }
+        });
+
+        purchaseCard.load().then(() => {
+            // Set up price option selection after the card is loaded
+            const priceOptions = document.querySelectorAll('.price-option');
+            const purchaseButton = document.querySelector('.custom-js-btn span');
+
+            priceOptions.forEach(option => {
+                option.addEventListener('click', function () {
+                    // Remove active class from all options
+                    priceOptions.forEach(opt => opt.classList.remove('active'));
+                    // Add active class to clicked option
+                    this.classList.add('active');
+
+                    // Update button text based on selection
+                    const selectedInput = this.querySelector('input[name="price"]');
+                    if (selectedInput && selectedInput.value === 'free') {
+                        purchaseButton.textContent = 'Download';
+                    } else {
+                        purchaseButton.textContent = 'Purchase';
+                    }
+                });
+            });
+        });
+    });
 </script>
 
 </html>
