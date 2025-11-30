@@ -1,13 +1,26 @@
+<!--
+    SALE PRICING - All prices are set dynamically from /assets/js/sale-config.js
+    Just update the config file to change prices and discount %
+    After sale ends, sale elements auto-hide via JavaScript
+-->
 <form class="price-toggle">
     <label class="price-option premium active">
         <input type="radio" name="price" value="premium" checked>
         <div class="price-content">
             <div class="price-header">
-                <span class="price">$40</span>
+                <div class="sale-price-container" data-product="osci-render">
+                    <span class="price original-price"></span>
+                    <span class="price sale-price"></span>
+                    <span class="sale-badge"></span>
+                </div>
                 <span class="label">Premium</span>
             </div>
             <p class="features">Includes extra features, such as recording the visualizer,
                 live video input, visualizing MP4s, and more!</p>
+            <div class="sale-countdown-mini">
+                <span class="mdi mdi-clock-outline"></span>
+                <span class="sale-countdown-text">sale ends: <span class="sale-countdown-value"></span></span>
+            </div>
         </div>
     </label>
     <label class="price-option free">

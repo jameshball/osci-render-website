@@ -17,6 +17,7 @@ $theme-colors: map-merge($theme-colors, (
 // Component imports
 @import 'carousel';
 @import 'purchase';
+@import 'sale';
 
 // Global styles
 video {

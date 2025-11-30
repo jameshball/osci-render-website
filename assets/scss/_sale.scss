@@ -1,0 +1,232 @@
+// Sale Banner Styles
+$accent-color: #00ff00;
+
+// Breakpoints
+$banner-stack-breakpoint: 900px;
+$countdown-hide-breakpoint: 575px;
+
+// Sale banner container (the element that loads the banner)
+#sale-banner-container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+// Offset for anchor links when banner is sticky
+#purchase {
+    scroll-margin-top: 70px;
+}
+
+// Main banner at top of page
+.sale-banner {
+    display: none; // Hidden by default, shown by JS when sale is active
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    border-bottom: 2px solid $accent-color;
+    padding: 1rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    
+    // Animated background effect
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, transparent, rgba($accent-color, 0.08), transparent);
+        background-size: 200% 100%;
+        animation: shimmer 12s ease-in-out infinite;
+    }
+    
+    @media (max-width: $banner-stack-breakpoint) {
+        padding: 0.5rem;
+    }
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 200% 0; }
+    50% { background-position: -200% 0; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.sale-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    
+    @media (max-width: $banner-stack-breakpoint) {
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+    }
+}
+
+.sale-banner-icon {
+    font-size: 2.25rem;
+    color: $accent-color;
+    animation: pulse 1.5s ease-in-out infinite;
+    
+    @media (max-width: $banner-stack-breakpoint) {
+        display: none;
+    }
+}
+
+.sale-banner-text {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sale-banner-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    
+    @media (max-width: $banner-stack-breakpoint) {
+        display: none;
+    }
+}
+
+.sale-banner-discount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $accent-color;
+    text-shadow: 0 0 10px rgba($accent-color, 0.5);
+    white-space: nowrap;
+}
+
+.sale-banner-countdown {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba($accent-color, 0.3);
+    
+    @media (max-width: $countdown-hide-breakpoint) {
+        display: none;
+    }
+}
+
+.countdown-label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+}
+
+.countdown-timer {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.countdown-unit {
+    display: flex;
+    align-items: baseline;
+}
+
+.countdown-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $accent-color;
+    font-variant-numeric: tabular-nums;
+    min-width: 2ch;
+    text-align: center;
+}
+
+.countdown-suffix {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-left: 1px;
+}
+
+.sale-banner-cta {
+    padding: 0.6rem 1.5rem;
+    background: $accent-color;
+    color: #000 !important;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba($accent-color, 0.4);
+    }
+}
+
+// Sale price styles for pricing section
+.sale-price-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.original-price {
+    position: relative;
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 1.2rem !important;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        left: -2px;
+        right: -2px;
+        top: 50%;
+        height: 3px;
+        background: $accent-color;
+        transform: rotate(-15deg);
+        box-shadow: 0 0 6px rgba($accent-color, 0.6);
+    }
+}
+
+.sale-price {
+    color: $accent-color !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 10px rgba($accent-color, 0.3);
+}
+
+.sale-badge {
+    background: $accent-color;
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba($accent-color, 0.4); }
+    50% { box-shadow: 0 0 0 6px rgba($accent-color, 0); }
+}
+
+.sale-countdown-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    
+    .mdi { color: $accent-color; }
+}
+
+.sale-countdown-text span {
+    color: $accent-color;
+    font-weight: 600;
+}
