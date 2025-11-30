@@ -1,0 +1,41 @@
+<!-- 
+    SALE BANNER - All configuration is in /assets/js/sale-config.js
+    To update for a new sale, just edit sale-config.js:
+    - endDate: When the sale ends
+    - discountPercent: The discount percentage
+    - prices: Original prices for each product
+    - saleName: The name shown in the banner
+    
+    Everything updates automatically - no need to edit this HTML!
+-->
+<div class="sale-banner">
+    <div class="sale-banner-content">
+        <span class="sale-banner-icon mdi mdi-lightning-bolt"></span>
+        <div class="sale-banner-text">
+            <span class="sale-banner-title"></span>
+            <span class="sale-banner-discount"></span>
+        </div>
+        <div class="sale-banner-countdown">
+            <span class="countdown-label">ends in:</span>
+            <div class="countdown-timer">
+                <div class="countdown-unit">
+                    <span class="countdown-value" id="countdown-days">00</span>
+                    <span class="countdown-suffix">d</span>
+                </div>
+                <div class="countdown-unit">
+                    <span class="countdown-value" id="countdown-hours">00</span>
+                    <span class="countdown-suffix">h</span>
+                </div>
+                <div class="countdown-unit">
+                    <span class="countdown-value" id="countdown-minutes">00</span>
+                    <span class="countdown-suffix">m</span>
+                </div>
+                <div class="countdown-unit">
+                    <span class="countdown-value" id="countdown-seconds">00</span>
+                    <span class="countdown-suffix">s</span>
+                </div>
+            </div>
+        </div>
+        <a href="#purchase" class="sale-banner-cta">purchase ↓</a>
+    </div>
+</div>

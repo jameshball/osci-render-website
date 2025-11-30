@@ -21,12 +21,15 @@
 
 <body class="bg-primary">
 
+    <!-- Sale Banner -->
+    <div id="sale-banner-container"></div>
+
     <header class="bg-primary text-secondary text-center py-5">
         <div class="container">
             <img src="../assets/images/sosci_logo_full_transparent.png" alt="sosci logo" class="img-fluid mb-4">
             <h3>an audio plugin for simulating realistic analogue oscilloscopes</h3>
             <br>
-            <a href="#purchase"><button type="button" class="btn btn-secondary btn-lg">↓ purchase</button></a>
+            <a href="#purchase"><button type="button" class="btn btn-secondary btn-lg">purchase ↓</button></a>
         </div>
     </header>
     <div class="bg-primary section-line text-white">
@@ -191,6 +194,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
     <script src="../assets/components/purchase-card.js"></script>
+    <script src="../assets/js/sale-config.js"></script>
+    <script src="../assets/js/sale.js"></script>
     <footer class="bg-primary text-white text-center py-3">
         <div class="container">
             <p>&copy; <span id="year"></span> James H Ball. All rights reserved.</p>
@@ -200,6 +205,19 @@
     </footer>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Load sale banner
+        fetch('../assets/components/sale-banner.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('sale-banner-container').innerHTML = html;
+                // Re-run after dynamic content loads
+                populatePrices();
+                if (isSaleActive()) {
+                    showSaleElements();
+                    updateCountdown();
+                }
+            });
 
         fetch('../assets/faq.html')
             .then(response => response.text())

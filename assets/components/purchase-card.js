@@ -70,6 +70,9 @@ class PurchaseCard {
                 }
             }
 
+            // Dispatch event when purchase card is fully loaded
+            document.dispatchEvent(new CustomEvent('purchaseCardLoaded'));
+
         } catch (error) {
             console.error('Error loading purchase card:', error);
         }
